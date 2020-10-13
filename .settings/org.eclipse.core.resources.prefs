@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/application/MainApplication.java=UTF-8
+encoding//src/application/MainController.java=UTF-8
+encoding//src/model/History.java=UTF-8
+encoding//src/trainSVM/Train.java=UTF-8

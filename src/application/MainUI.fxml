@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+	<top>
+		<TabPane fx:id="tabPane" prefHeight="699.0" prefWidth="1366.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+			<tabs>
+				<Tab fx:id="main" text="Kiểm soát xe ra vào">
+					<content>
+						<BorderPane prefHeight="200.0" prefWidth="200.0">
+							<left>
+								<Pane prefHeight="648.0" prefWidth="683.0" BorderPane.alignment="CENTER">
+									<children>
+										<Label alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" text="XE VÀO">
+											<font>
+												<Font name="System Bold" size="18.0" />
+											</font>
+										</Label>
+										<SplitPane dividerPositions="0.5" layoutX="5.0" layoutY="30.0" prefHeight="239.0" prefWidth="669.0" style="-fx-border-color: #000000;">
+											<items>
+												<Pane prefHeight="239.0" prefWidth="334.0">
+													<children>
+														<ImageView fx:id="imgViewPlateInCamera" fitHeight="239.0" fitWidth="334.0" pickOnBounds="true" preserveRatio="true" />
+													</children>
+												</Pane>
+												<Pane prefHeight="239.0" prefWidth="334.0">
+													<children>
+														<ImageView fx:id="imgViewFaceInCamera" fitHeight="239.0" fitWidth="334.0" pickOnBounds="true" preserveRatio="true" />
+													</children>
+												</Pane>
+											</items>
+										</SplitPane>
+										<GridPane layoutX="20.0" layoutY="272.0" prefHeight="82.0" prefWidth="640.0">
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES" maxWidth="734.0" minWidth="10.0" prefWidth="734.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+												<RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+											<children>
+												<Pane prefHeight="31.0" prefWidth="787.0" GridPane.rowIndex="1">
+													<children>
+														<Button layoutX="578.0" layoutY="5.0" mnemonicParsing="false" style="-fx-background-color: #3399ff;" text="Gia hạn" textFill="WHITE">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Button>
+														<TextField fx:id="txfCardInStatus" layoutX="363.0" layoutY="5.0" prefHeight="31.0" prefWidth="191.0" />
+														<Label layoutX="276.0" layoutY="11.0" prefWidth="88.0" text="Trạng thái">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Label>
+														<Label layoutY="11.0" text="Loại thẻ">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Label>
+														<TextField fx:id="txfCardInType" layoutX="48.0" layoutY="5.0" prefHeight="31.0" prefWidth="191.0" />
+													</children>
+												</Pane>
+												<Pane prefHeight="30.0" prefWidth="734.0">
+													<children>
+														<TextField fx:id="txfCardInId" layoutX="48.0" layoutY="5.0" onAction="#checkCardIn" prefHeight="31.0" prefWidth="87.0" />
+														<Label layoutY="11.0" text="Mã thẻ">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Label>
+														<Label layoutX="149.0" layoutY="11.0" text="Tên KH">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Label>
+														<TextField fx:id="txfCustomerInName" layoutX="194.0" layoutY="5.0" prefHeight="31.0" prefWidth="244.0" />
+														<Label layoutX="447.0" layoutY="11.0" text="CMND">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Label>
+														<TextField fx:id="txfCustomerInId" layoutX="490.0" layoutY="5.0" prefHeight="31.0" prefWidth="150.0" />
+													</children>
+												</Pane>
+											</children>
+										</GridPane>
+										<Pane layoutX="5.0" layoutY="354.0" prefHeight="303.0" prefWidth="669.0" style="-fx-border-color: #000000;">
+											<children>
+												<ImageView fx:id="imgViewPlateIn" fitHeight="98.0" fitWidth="113.0" layoutX="119.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+												<ImageView fx:id="imgViewFaceIn" fitHeight="98.0" fitWidth="113.0" layoutX="231.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+												<TextArea fx:id="txaPlateIn" layoutX="347.0" layoutY="2.0" prefHeight="98.0" prefWidth="113.0">
+													<font>
+														<Font name="System Bold" size="20.0" />
+													</font>
+												</TextArea>
+												<TextArea fx:id="txaTimeIn" layoutX="462.0" layoutY="2.0" prefHeight="98.0" prefWidth="198.0">
+													<font>
+														<Font size="18.0" />
+													</font>
+												</TextArea>
+												<ImageView fx:id="imgViewPlateInHistory" fitHeight="181.0" fitWidth="225.0" layoutX="116.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" />
+												<ImageView fx:id="imgViewFaceInHistory" fitHeight="181.0" fitWidth="225.0" layoutX="348.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" />
+												<Label layoutX="44.0" layoutY="197.0" text="Lịch sử" />
+												<Label layoutX="44.0" layoutY="41.0" text="Thông tin" />
+											</children>
+										</Pane>
+									</children>
+								</Pane>
+							</left>
+							<right>
+								<Pane prefHeight="648.0" prefWidth="683.0" BorderPane.alignment="CENTER">
+									<children>
+										<Label alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" text="XE RA">
+											<font>
+												<Font name="System Bold" size="18.0" />
+											</font>
+										</Label>
+										<SplitPane dividerPositions="0.5" layoutX="5.0" layoutY="30.0" prefHeight="239.0" prefWidth="669.0" style="-fx-border-color: #000000;">
+											<items>
+												<Pane prefHeight="239.0" prefWidth="334.0">
+													<children>
+														<ImageView fx:id="imgViewPlateOutCamera" fitHeight="239.0" fitWidth="334.0" layoutX="8.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+													</children>
+												</Pane>
+												<Pane prefHeight="239.0" prefWidth="334.0">
+													<children>
+														<ImageView fx:id="imgViewFaceOutCamera" fitHeight="239.0" fitWidth="334.0" pickOnBounds="true" preserveRatio="true" />
+													</children>
+												</Pane>
+											</items>
+										</SplitPane>
+										<GridPane layoutX="15.0" layoutY="273.0" prefHeight="82.0" prefWidth="640.0">
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES" maxWidth="734.0" minWidth="10.0" prefWidth="734.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+												<RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+											<children>
+												<Pane prefHeight="31.0" prefWidth="787.0" GridPane.rowIndex="1">
+													<children>
+														<Button layoutX="578.0" layoutY="5.0" mnemonicParsing="false" style="-fx-background-color: #3399ff;" text="Gia hạn" textFill="WHITE">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Button>
+														<TextField fx:id="txfCardOutStatus" layoutX="363.0" layoutY="5.0" prefHeight="31.0" prefWidth="191.0" />
+														<TextField fx:id="txfCardOutType" layoutX="48.0" layoutY="5.0" prefHeight="31.0" prefWidth="191.0" />
+														<Label layoutX="276.0" layoutY="11.0" text="Trạng thái">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Label>
+														<Label layoutY="11.0" text="Loại thẻ">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Label>
+													</children>
+												</Pane>
+												<Pane prefHeight="30.0" prefWidth="734.0">
+													<children>
+														<TextField fx:id="txfCardOutId" layoutX="48.0" layoutY="5.0" onAction="#checkCardOut" prefHeight="31.0" prefWidth="87.0" />
+														<Label layoutY="11.0" text="Mã thẻ">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Label>
+														<Label layoutX="149.0" layoutY="11.0" text="Tên KH">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Label>
+														<TextField fx:id="txfCustomerOutName" layoutX="194.0" layoutY="5.0" prefHeight="31.0" prefWidth="244.0" />
+														<Label layoutX="447.0" layoutY="11.0" text="CMND">
+															<font>
+																<Font size="13.0" />
+															</font>
+														</Label>
+														<TextField fx:id="txfCustomerOutId" layoutX="490.0" layoutY="5.0" prefHeight="31.0" prefWidth="150.0" />
+													</children>
+												</Pane>
+											</children>
+										</GridPane>
+										<Button layoutX="567.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="107.0" style="-fx-background-color: #ff4d4d;" text="Báo mất thẻ" textFill="WHITE">
+											<font>
+												<Font name="System Bold" size="13.0" />
+											</font>
+										</Button>
+										<Pane layoutX="5.0" layoutY="354.0" prefHeight="303.0" prefWidth="669.0" style="-fx-border-color: #000000;">
+											<children>
+												<ImageView fx:id="imgViewPlateOut" fitHeight="98.0" fitWidth="113.0" layoutX="119.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+												<ImageView fx:id="imgViewFaceOut" fitHeight="98.0" fitWidth="113.0" layoutX="231.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+												<TextArea fx:id="txaPlateOut" layoutX="347.0" layoutY="2.0" prefHeight="98.0" prefWidth="113.0">
+													<font>
+														<Font name="System Bold" size="20.0" />
+													</font>
+												</TextArea>
+												<ImageView fx:id="imgViewPlateOutHistory" fitHeight="181.0" fitWidth="225.0" layoutX="110.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" />
+												<ImageView fx:id="imgViewFaceOutHistory" fitHeight="181.0" fitWidth="225.0" layoutX="348.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" />
+												<Label layoutX="44.0" layoutY="197.0" text="Lịch sử" />
+												<Label layoutX="44.0" layoutY="41.0" text="Thông tin" />
+												<TextField fx:id="txfTimeOut" alignment="CENTER" layoutX="462.0" layoutY="2.0" prefHeight="31.0" prefWidth="195.0">
+													<font>
+														<Font size="18.0" />
+													</font>
+												</TextField>
+												<TextField fx:id="txfPriceOut" alignment="CENTER" layoutX="462.0" layoutY="44.0" prefHeight="15.0" prefWidth="195.0" style="-fx-text-fill: red;">
+													<font>
+														<Font name="System Bold" size="26.0" />
+													</font>
+												</TextField>
+											</children>
+										</Pane>
+									</children>
+								</Pane>
+							</right>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="history" onSelectionChanged="#chooseHistoryTab" text="Lịch sử">
+					<content>
+						<BorderPane prefHeight="200.0" prefWidth="200.0">
+							<top>
+								<Pane prefHeight="78.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+									<children>
+										<Label layoutX="608.0" layoutY="8.0" text="DANH SÁCH LỊCH SỬ">
+											<font>
+												<Font name="System Bold" size="18.0" />
+											</font>
+										</Label>
+										<TextField fx:id="searchTextField" layoutX="906.0" layoutY="41.0" prefHeight="31.0" prefWidth="310.0" promptText="Tìm kiếm BIỂN SỐ hoặc MÃ KHÁCH HÀNG" />
+									</children>
+								</Pane>
+							</top>
+							<left>
+								<Separator opacity="0.0" prefHeight="0.0" prefWidth="123.0" BorderPane.alignment="CENTER" />
+							</left>
+							<right>
+								<Separator opacity="0.0" prefWidth="123.0" BorderPane.alignment="CENTER" />
+							</right>
+							<bottom>
+								<Pane prefHeight="580.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+									<children>
+										<TableView fx:id="historyTable" layoutX="165.0" onMouseClicked="#chooseHistoryDetail" prefHeight="520.0" prefWidth="1051.0" style="-fx-alignment: CENTER;">
+											<columns>
+												<TableColumn fx:id="idCol" prefWidth="89.0" text="MÃ LỊCH SỬ" />
+                                    <TableColumn fx:id="typeCardCol" prefWidth="107.00003051757812" text="LOẠI THẺ" />
+												<TableColumn fx:id="plateNoCol" prefWidth="128.0" text="BIỂN SỐ" />
+												<TableColumn fx:id="customerIdCol" prefWidth="180.0" text="MÃ KHÁCH HÀNG" />
+												<TableColumn fx:id="inDateCol" prefWidth="194.0" text="THỜI GIAN VÀO" />
+												<TableColumn fx:id="outDateCol" prefWidth="212.0" text="THỜI GIAN RA" />
+                                    <TableColumn fx:id="priceCol" prefWidth="140.0" text="SỐ TIỀN" />
+											</columns>
+										</TableView>
+										<Pagination fx:id="pagination" layoutY="500.0" prefHeight="71.0" prefWidth="1366.0" />
+									</children>
+								</Pane>
+							</bottom>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="statistic" onSelectionChanged="#chooseStatisticTab" text="Thống kê">
+					<content>
+						<BorderPane id="pane_bar" fx:id="pane_bar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1366.0">
+                     <top>
+								<BorderPane prefHeight="42.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+                           <bottom>
+										<Label text="THỐNG KÊ DOANH THU" BorderPane.alignment="CENTER">
+											<font>
+												<Font name="System Bold" size="18.0" />
+											</font>
+										</Label>
+                           </bottom>
+								</BorderPane>
+                     </top>
+                     <center>
+      								<HBox prefHeight="96.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+      									<children>
+      										<Pane prefHeight="70.0" prefWidth="340.0" />
+      										<Pane prefHeight="200.0" prefWidth="100.0">
+      											<children>
+      												<Label layoutX="36.0" layoutY="25.0" text="Từ ngày">
+      													<font>
+      														<Font size="14.0" />
+      													</font>
+      												</Label>
+      											</children>
+      										</Pane>
+      										<Pane prefHeight="200.0" prefWidth="250.0">
+      											<children>
+      												<DatePicker id="fx_DayFrom" fx:id="fx_DayFrom" layoutX="16.0" layoutY="20.0" onAction="#setDayfrom" />
+      											</children>
+      										</Pane>
+      										<Pane layoutX="560.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+      											<children>
+      												<Label layoutX="21.0" layoutY="25.0" text="Đến ngày">
+      													<font>
+      														<Font size="14.0" />
+      													</font>
+      												</Label>
+      											</children>
+      										</Pane>
+      										<Pane layoutX="660.0" layoutY="10.0" prefHeight="200.0" prefWidth="250.0">
+      											<children>
+      												<DatePicker id="fx_DayTo" fx:id="fx_DayTo" layoutX="16.0" layoutY="20.0" onAction="#setDayto" />
+      											</children>
+      										</Pane>
+      										<Pane prefHeight="70.0" prefWidth="286.0">
+      											<children>
+      												<Button id="fx_buttonSearch" fx:id="fx_buttonSearch" layoutX="92.0" layoutY="23.0" mnemonicParsing="false" onAction="#showChart" text="Thống kê" />
+      											</children>
+      										</Pane>
+      									</children>
+      								</HBox>
+                     </center>
+                     <bottom>
+                        <BorderPane prefHeight="582.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+                           <center>
+      								<BarChart id="fx_BarChart" fx:id="fx_BarChart" prefHeight="523.0" prefWidth="1022.0" BorderPane.alignment="CENTER">
+      									<xAxis>
+      										<CategoryAxis id="fx_bar_X" fx:id="fx_bar_X" side="BOTTOM" />
+      									</xAxis>
+      									<yAxis>
+      										<NumberAxis id="fx_bar_Y" fx:id="fx_bar_Y" side="LEFT" />
+      									</yAxis>
+      								</BarChart>
+                           </center>
+                           <right>
+                              <Separator opacity="0.0" prefHeight="0.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+                           </right>
+                           <left>
+                              <Separator opacity="0.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+                           </left>
+                           <bottom>
+                              <Separator opacity="0.0" orientation="VERTICAL" prefHeight="59.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+                           </bottom>
+                        </BorderPane>
+                     </bottom>
+						</BorderPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</top>
+</BorderPane>
